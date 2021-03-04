@@ -7,20 +7,16 @@ import ru.geekbrains.geekbrains_popular_libraries_kotlin.mvp.view.MainView
 class MainPresenter(val mainView: MainView) {
     val model = CountersModel()
 
-    fun counterClick(id: Int){
-        when(id){
-            R.id.btn_counter1 -> {
-                val nextValue = model.next(0)
-                mainView.setButtonText(0, nextValue.toString())
-            }
-            R.id.btn_counter2 -> {
-                val nextValue = model.next(1)
-                mainView.setButtonText(1, nextValue.toString())
-            }
-            R.id.btn_counter3 -> {
-                val nextValue = model.next(2)
-                mainView.setButtonText(2, nextValue.toString())
-            }
-        }
+    fun batton1CounterClick() {
+        mainView.setBtn_counter1Text(model.next(0).toString())
+    }
+
+    fun batton2CounterClick() {
+        mainView.setBtn_counter2Text(model.next(1).toString())
+    }
+
+    fun batton3CounterClick() {
+        mainView.setBtn_counter3Text(model.next(2).toString())
+
     }
 }
